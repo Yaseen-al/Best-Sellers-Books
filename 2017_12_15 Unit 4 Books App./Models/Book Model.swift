@@ -18,11 +18,13 @@ struct BookWraper: Codable {
     let rank: Int
     let bookDetails: [Book]
     let isbns: [IspnWrapper]
+    let bestsellersDate: String
     enum CodingKeys: String, CodingKey {
         case listName = "list_name"
         case bookDetails = "book_details"
         case rank
         case isbns
+        case bestsellersDate = "bestsellers_date"
     }
 }
 struct IspnWrapper: Codable {

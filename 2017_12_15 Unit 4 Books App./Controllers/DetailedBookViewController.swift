@@ -10,6 +10,7 @@ import UIKit
 
 class DetailedBookViewController: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var bookAuthorLabel: UILabel!
     @IBOutlet weak var bookPoster: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
@@ -31,8 +32,10 @@ class DetailedBookViewController: UIViewController {
     var book: Book?
     func setDetailedBook(){
         //Setting the detailed book
+        spinTheSpinner()
         guard let detailedBook = detailedBook else {
             setBook()
+            stopTheSpinner()
             return
         }
         bookTitle.text = detailedBook.volumeInfo.title
@@ -41,7 +44,7 @@ class DetailedBookViewController: UIViewController {
         guard let image = detailedBook.volumeInfo.imageLinks?.thumbnail else {
             return
         }
-        ImageAPIClient.manager.getImage(from: image, completionHandler: {self.bookPoster.image = $0}, errorHandler: {print($0)})
+        ImageAPIClient.manager.getImage(from: image, completionHandler: {self.bookPoster.image = $0; self.stopTheSpinner()}, errorHandler: {print($0)})
     }
     func setBook() {
         // Setting a Book
@@ -54,6 +57,15 @@ class DetailedBookViewController: UIViewController {
         bookPoster.image = #imageLiteral(resourceName: "NoteBook")
         
     }
+    func spinTheSpinner() {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    func stopTheSpinner() {
+        spinner.stopAnimating()
+        spinner.isHidden = true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

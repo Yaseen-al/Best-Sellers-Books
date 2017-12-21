@@ -6,7 +6,7 @@
 //  Copyright © 2017 Quark. All rights reserved.
 //
 
-//Attention: GoogleAPI key have limited number of calls and since I am loading a lot of books and I am calling the Google API for each Book I have to be carefule so I don't reach the search limit as it will give me a code error can't find coding key under name Item, I am working on look for updates button that will check for updates upon request at the settings page but I haven't finish it yes
+//Attention: GoogleAPI key have limited number of calls and since I am loading a lot of books and I am calling the Google API for each Book I have to be carefule so I don't reach the search limit as it will give me a code error can't find coding key under name Item, I am working on, look for updates button that will check for updates upon request at the settings page  as well I can add detailed book cashing and saving to NS Archive but I haven't finish it yet
 
 import UIKit
 class BestSellersViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
@@ -84,8 +84,6 @@ class BestSellersViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         // setting the favouritsController to be the starting point
         self.tabBarController?.selectedIndex = 1
     }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         //Check if there is a stored categorie at the defaults, example if the user saved science or whatever from the seting page, and it is in the view willAppear as the didSet doesn't work if it is in the viewDidLoad
         guard categories.isEmpty else {
@@ -150,7 +148,7 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
             return UICollectionViewCell()
         }
         let bookSetup = books[indexPath.row]
-        cell.bookShortDescription.text =  bookSetup.bookDetails.first?.description
+        cell.bookShortDescription.text = bookSetup.bestsellersDate + "\n" + (bookSetup.bookDetails.first?.description)!
         cell.bookTitle.text = bookSetup.bookDetails.first?.author
         cell.bookPoster.image = #imageLiteral(resourceName: "NoteBook")
         guard !detailedBooks.isEmpty else {
@@ -188,7 +186,6 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
 }
 //Spenner Functions
 extension BestSellersViewController{
-    
     func spinTheSpinner() {
         spinner.isHidden = false
         spinner.startAnimating()

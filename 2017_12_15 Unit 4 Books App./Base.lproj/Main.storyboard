@@ -153,14 +153,19 @@
                                     <action selector="addToFavouriteButton:" destination="Ttt-Rm-YFQ" eventType="touchUpInside" id="5d2-8E-kwK"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T81-MC-yea">
+                                <rect key="frame" x="109" y="211.33333333333334" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dsf-uU-LSV" firstAttribute="height" secondItem="fz2-d4-lSI" secondAttribute="height" multiplier="0.25" id="4TI-4L-Sf0"/>
                             <constraint firstItem="tdl-vs-oWd" firstAttribute="width" secondItem="fz2-d4-lSI" secondAttribute="width" multiplier="0.4" id="7Kb-r8-RFm"/>
                             <constraint firstItem="rbg-FS-Zeg" firstAttribute="top" secondItem="41s-fD-EkG" secondAttribute="bottom" constant="10" id="D0M-Q8-2hK"/>
+                            <constraint firstItem="T81-MC-yea" firstAttribute="centerX" secondItem="tdl-vs-oWd" secondAttribute="centerX" id="DEP-LS-9Oa"/>
                             <constraint firstItem="dsf-uU-LSV" firstAttribute="top" secondItem="tdl-vs-oWd" secondAttribute="bottom" constant="10" id="Fea-at-gyc"/>
                             <constraint firstItem="aO6-ch-HWj" firstAttribute="trailing" secondItem="rbg-FS-Zeg" secondAttribute="trailing" constant="5" id="H8y-JA-o3M"/>
+                            <constraint firstItem="T81-MC-yea" firstAttribute="centerY" secondItem="tdl-vs-oWd" secondAttribute="centerY" id="HtM-Rv-UWZ"/>
                             <constraint firstItem="OIt-tG-v80" firstAttribute="centerX" secondItem="aO6-ch-HWj" secondAttribute="centerX" id="LQE-fP-gLt"/>
                             <constraint firstItem="tdl-vs-oWd" firstAttribute="top" secondItem="aO6-ch-HWj" secondAttribute="top" constant="10" id="MsO-MO-K3Y"/>
                             <constraint firstItem="aO6-ch-HWj" firstAttribute="trailing" secondItem="41s-fD-EkG" secondAttribute="trailing" constant="5" id="P7d-ZC-2Pj"/>
@@ -180,6 +185,7 @@
                         <outlet property="bookDescription" destination="dsf-uU-LSV" id="sb4-Tx-eKA"/>
                         <outlet property="bookPoster" destination="tdl-vs-oWd" id="gBW-4D-hje"/>
                         <outlet property="bookTitle" destination="41s-fD-EkG" id="n1i-D9-N7W"/>
+                        <outlet property="spinner" destination="T81-MC-yea" id="8Aa-2l-83Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vw-da-bNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
