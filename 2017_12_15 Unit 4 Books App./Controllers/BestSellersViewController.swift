@@ -84,8 +84,13 @@ class BestSellersViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         // setting the favouritsController to be the starting point
         self.tabBarController?.selectedIndex = 1
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         //Check if there is a stored categorie at the defaults, example if the user saved science or whatever from the seting page, and it is in the view willAppear as the didSet doesn't work if it is in the viewDidLoad
+        guard categories.isEmpty else {
+            return
+        }
         let categoryFromDefaults = DefaultCategory.returnValue(inputDefaults: defaults, and: DefaultSettingKeys.userOne.rawValue)
         if let safeCategoryFromDefaults = categoryFromDefaults{
             self.defaultSetting = safeCategoryFromDefaults
@@ -94,6 +99,7 @@ class BestSellersViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             loadCategories()
         }
     }
+    
     
 }
 // Extension Content: - Loading Detailed Books - UICollectionViewDataSource Methods - Seguein Function
@@ -116,7 +122,7 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
             //Option1: Loading the books using title at the DetailedBookAPIClient as some books doesnt' have data using isbns at the googlAPI
             DetailedBookAPIClient.manager.getDetaildBookUsingTitle(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
             //Option2: Loading the books using the isbn as a backup
-                        DetailedBookAPIClient.manager.getDetaildBookUsingIsbn(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
+            DetailedBookAPIClient.manager.getDetaildBookUsingIsbn(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
             
         }
     }
@@ -167,12 +173,12 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
             if let desination =  segue.destination as? DetailedBookViewController{
                 print("I am segueing")
                 let bookSetup = books[(bestSellerBooksCollectionView.indexPathsForSelectedItems?.first?.row)!]
-                        let detailedBook = detailedBooks.filter{($0.volumeInfo.title?.lowercased().contains(bookSetup.bookDetails.first!.title.lowercased()))!}
+                let detailedBook = detailedBooks.filter{($0.volumeInfo.title?.lowercased().contains(bookSetup.bookDetails.first!.title.lowercased()))!}
                 // this is because the books in the detailed book and in the book doesn't have the same index
                 if let detailedBookSetup = detailedBook.first{
-                desination.detailedBook = detailedBookSetup
+                    desination.detailedBook = detailedBookSetup
                 }else{
-                desination.book = bookSetup.bookDetails.first
+                    desination.book = bookSetup.bookDetails.first
                 }
             }
         default:
