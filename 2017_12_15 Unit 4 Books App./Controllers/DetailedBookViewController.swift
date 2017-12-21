@@ -28,9 +28,11 @@ class DetailedBookViewController: UIViewController {
         FavouriteBookDataModel.shared.addDetailedBookFavoriteLis(book: detailedBook)
     }
     var detailedBook: DetailedBook?
+    var book: Book?
     func setDetailedBook(){
-        //TODO: Set the poster and the labels
+        //Setting the detailed book
         guard let detailedBook = detailedBook else {
+            setBook()
             return
         }
         bookTitle.text = detailedBook.volumeInfo.title
@@ -40,6 +42,17 @@ class DetailedBookViewController: UIViewController {
             return
         }
         ImageAPIClient.manager.getImage(from: image, completionHandler: {self.bookPoster.image = $0}, errorHandler: {print($0)})
+    }
+    func setBook() {
+        // Setting a Book
+        guard let book = book else {
+            return
+        }
+        bookTitle.text = book.title
+        bookDescription.text = book.description
+        bookAuthorLabel.text = book.author
+        bookPoster.image = #imageLiteral(resourceName: "NoteBook")
+        
     }
     
     override func viewDidLoad() {

@@ -18,6 +18,7 @@ class BestSellersViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             spinTheSpinner()
             //loading the detailed books
             loadDetailedBooksFromBooks(from: books)
+            bestSellerBooksCollectionView.reloadData()
             //            bestSellerBooksCollectionView.reloadData()
         }
     }
@@ -113,9 +114,9 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
             print(currentBook.bookDetails[0].title, currentBook.bookDetails[0].author )
             //            print(currentBook.isbns.first?.isbn10 ?? "no ISBN\(currentBook.isbns.count)")
             //Option1: Loading the books using title at the DetailedBookAPIClient as some books doesnt' have data using isbns at the googlAPI
-            DetailedBookAPIClient.manager.getDetaildBookUsingTitle(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
+//            DetailedBookAPIClient.manager.getDetaildBookUsingTitle(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
             //Option2: Loading the books using the isbn as a backup
-                        DetailedBookAPIClient.manager.getDetaildBookUsingIsbn(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
+//                        DetailedBookAPIClient.manager.getDetaildBookUsingIsbn(book: currentBook.bookDetails[0], completionHandler: {allDetailedBooks.append($0[0])}, errorHandler: {print($0)})
             
         }
     }
@@ -170,6 +171,8 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
                 // this is because the books in the detailed book and in the book doesn't have the same index
                 if let detailedBookSetup = detailedBook.first{
                 desination.detailedBook = detailedBookSetup
+                }else{
+                desination.book = bookSetup.bookDetails.first
                 }
             }
         default:
