@@ -23,7 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EPK-a2-nL4">
                                 <rect key="frame" x="0.0" y="64" width="414" height="405"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Ub-WA-lUv">
                                     <size key="itemSize" width="200" height="400"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -43,16 +43,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PYn-oS-dz1" userLabel="Book Poster">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRq-CD-1lK">
-                                                    <rect key="frame" x="61.666666666666664" y="205" width="76.666666666666686" height="20.666666666666657"/>
+                                                    <rect key="frame" x="61.666666666666664" y="265" width="76.666666666666686" height="20.666666666666686"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9dT-gN-5Qh">
-                                                    <rect key="frame" x="8" y="243" width="184" height="152"/>
+                                                    <rect key="frame" x="8" y="303" width="184" height="92"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,7 +60,7 @@
                                                 </textView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="9dT-gN-5Qh" firstAttribute="top" secondItem="TRq-CD-1lK" secondAttribute="bottom" constant="17.333333333333314" id="0O6-8f-NS7"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="9dT-gN-5Qh" secondAttribute="trailing" id="0yS-EA-IwW"/>
@@ -70,7 +70,7 @@
                                             <constraint firstItem="PYn-oS-dz1" firstAttribute="leading" secondItem="kn8-LN-U24" secondAttribute="leading" id="FiQ-cz-Ad8"/>
                                             <constraint firstAttribute="bottom" secondItem="9dT-gN-5Qh" secondAttribute="bottom" constant="5" id="HMJ-Qv-pej"/>
                                             <constraint firstItem="PYn-oS-dz1" firstAttribute="top" secondItem="kn8-LN-U24" secondAttribute="top" id="WKt-ZU-JVX"/>
-                                            <constraint firstItem="PYn-oS-dz1" firstAttribute="height" secondItem="kn8-LN-U24" secondAttribute="height" multiplier="0.5" id="XtK-IZ-xYb"/>
+                                            <constraint firstItem="PYn-oS-dz1" firstAttribute="height" secondItem="kn8-LN-U24" secondAttribute="height" multiplier="0.65" id="XtK-IZ-xYb"/>
                                             <constraint firstItem="PYn-oS-dz1" firstAttribute="width" secondItem="kn8-LN-U24" secondAttribute="width" id="fO1-ct-dHc"/>
                                             <constraint firstItem="TRq-CD-1lK" firstAttribute="centerX" secondItem="kn8-LN-U24" secondAttribute="centerX" id="jJc-9A-wew"/>
                                             <constraint firstItem="TRq-CD-1lK" firstAttribute="top" secondItem="PYn-oS-dz1" secondAttribute="bottom" constant="5" id="l5e-rG-7se"/>
@@ -215,23 +215,23 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AK9-dG-wDy">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qO2-rp-wFv">
-                                    <size key="itemSize" width="200" height="400"/>
+                                    <size key="itemSize" width="200" height="350"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favouriteCell" id="CGm-rS-lr8" customClass="FavouriteBookCollectionViewCell" customModule="_017_12_15_Unit_4_Books_App_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="350"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="itc-5V-ob7" userLabel="BookPoster">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="350"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csh-3J-vRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="68"/>
+            <point key="canvasLocation" x="1328.985507246377" y="67.663043478260875"/>
         </scene>
         <!--Best Sellers-->
         <scene sceneID="5m2-R9-K7U">
