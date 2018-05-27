@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="592.75362318840587" y="975.81521739130437"/>
+            <point key="canvasLocation" x="1329" y="975"/>
         </scene>
         <!--Detailed Book View Controller-->
         <scene sceneID="nwj-ZC-1W8">
@@ -190,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vw-da-bNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517.3913043478262" y="975.00000000000011"/>
+            <point key="canvasLocation" x="2465" y="975"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="P0g-MQ-o4b">
@@ -209,7 +209,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dao-aB-Ao1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-859" y="-130"/>
+            <point key="canvasLocation" x="-1075" y="580"/>
         </scene>
         <!--Favourite Books-->
         <scene sceneID="7OM-vM-mXu">
@@ -291,7 +291,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeS-ep-Qpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391" y="976"/>
+            <point key="canvasLocation" x="225" y="975"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="bGk-ln-Fn7">
@@ -337,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO0-ad-ZJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="-734"/>
+            <point key="canvasLocation" x="1329" y="-734"/>
         </scene>
         <!--Favourite Books-->
         <scene sceneID="9cc-6H-bjx">
@@ -383,6 +383,6 @@
         <image name="settings-gears" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8jG-lj-bY5"/>
+        <segue reference="QcF-YX-skq"/>
     </inferredMetricsTieBreakers>
 </document>

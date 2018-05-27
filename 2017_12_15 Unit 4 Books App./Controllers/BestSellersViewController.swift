@@ -97,8 +97,6 @@ class BestSellersViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             loadCategories()
         }
     }
-    
-    
 }
 // Extension Content: - Loading Detailed Books - UICollectionViewDataSource Methods - Seguein Function
 extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -154,7 +152,16 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
         guard !detailedBooks.isEmpty else {
             return cell
         }
-        let detailedBook = detailedBooks.filter{($0.volumeInfo.title?.lowercased().contains(bookSetup.bookDetails.first!.title.lowercased()))!}
+        
+        
+//        let detailedBook = detailedBooks.filter{($0.volumeInfo.title?.lowercased().contains(bookSetup.bookDetails.first!.title.lowercased()))!}
+        let detailedBook = detailedBooks.filter { (currentDetailedBook) -> Bool in
+            guard let bookTitle = currentDetailedBook.volumeInfo.title?.lowercased() else {return false}
+            guard let bookSetupTitle = bookSetup.bookDetails.first?.title.lowercased() else{return false}
+            guard bookTitle.contains(bookSetupTitle) else {return false}
+            return true
+        }
+        
         if let detailedBookSetup = detailedBook.first{
             ImageAPIClient.manager.getImage(from: (detailedBookSetup.volumeInfo.imageLinks?.smallThumbnail)!, completionHandler: {cell.bookPoster.image = $0; cell.setNeedsLayout()}, errorHandler: {print($0)})
         }
@@ -171,7 +178,12 @@ extension BestSellersViewController: UICollectionViewDelegate, UICollectionViewD
             if let desination =  segue.destination as? DetailedBookViewController{
                 print("I am segueing")
                 let bookSetup = books[(bestSellerBooksCollectionView.indexPathsForSelectedItems?.first?.row)!]
-                let detailedBook = detailedBooks.filter{($0.volumeInfo.title?.lowercased().contains(bookSetup.bookDetails.first!.title.lowercased()))!}
+                let detailedBook = detailedBooks.filter { (currentDetailedBook) -> Bool in
+                    guard let bookTitle = currentDetailedBook.volumeInfo.title?.lowercased() else {return false}
+                    guard let bookSetupTitle = bookSetup.bookDetails.first?.title.lowercased() else{return false}
+                    guard bookTitle.contains(bookSetupTitle) else {return false}
+                    return true
+                }
                 // this is because the books in the detailed book and in the book doesn't have the same index
                 if let detailedBookSetup = detailedBook.first{
                     desination.detailedBook = detailedBookSetup
